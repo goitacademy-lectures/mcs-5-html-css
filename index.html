@@ -4,45 +4,136 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      @keyframes slide {
+        from {
+          transform: translateX(-40%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1.5;
+        text-decoration: none;
+        color: #ffffff;
+        list-style-type: none;
+      }
+      body {
+        width: 100dvw;
+        height: 100dvh;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1rem 1fr 1rem;
+        justify-items: center;
+        align-items: center;
+        background-color: #212121;
+      }
+      ul {
+        grid-column: 2/3;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-block: 0.5rem;
+        background-clip: text;
+        background-image: linear-gradient(45deg, hotpink, blueviolet);
+        transition: 400ms ease-in;
+
+        &:hover,
+        &:focus {
+          color: transparent;
+        }
+
+        &[data-disabled='true'] {
+          display: none;
+        }
+        &::before {
+          content: '';
+          width: 1.25rem;
+          height: 1.25rem;
+          opacity: 0;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none'%3E%3Cg clip-path='url(%23clip0_566_27)'%3E%3Cpath d='M50 0C63.2608 0 75.9785 5.26784 85.3553 14.6447C94.7322 24.0215 100 36.7392 100 50C100 63.2608 94.7322 75.9785 85.3553 85.3553C75.9785 94.7322 63.2608 100 50 100C36.7392 100 24.0215 94.7322 14.6447 85.3553C5.26784 75.9785 0 63.2608 0 50C0 36.7392 5.26784 24.0215 14.6447 14.6447C24.0215 5.26784 36.7392 0 50 0ZM28.125 46.875C27.2962 46.875 26.5013 47.2042 25.9153 47.7903C25.3292 48.3763 25 49.1712 25 50C25 50.8288 25.3292 51.6237 25.9153 52.2097C26.5013 52.7958 27.2962 53.125 28.125 53.125H64.3313L50.9125 66.5375C50.6219 66.828 50.3915 67.173 50.2342 67.5526C50.077 67.9322 49.9961 68.3391 49.9961 68.75C49.9961 69.1609 50.077 69.5678 50.2342 69.9474C50.3915 70.327 50.6219 70.672 50.9125 70.9625C51.203 71.2531 51.548 71.4835 51.9276 71.6408C52.3072 71.798 52.7141 71.8789 53.125 71.8789C53.5359 71.8789 53.9428 71.798 54.3224 71.6408C54.702 71.4835 55.047 71.2531 55.3375 70.9625L74.0875 52.2125C74.3785 51.9222 74.6094 51.5774 74.767 51.1977C74.9245 50.8181 75.0056 50.411 75.0056 50C75.0056 49.589 74.9245 49.1819 74.767 48.8023C74.6094 48.4226 74.3785 48.0778 74.0875 47.7875L55.3375 29.0375C55.047 28.7469 54.702 28.5165 54.3224 28.3592C53.9428 28.202 53.5359 28.1211 53.125 28.1211C52.7141 28.1211 52.3072 28.202 51.9276 28.3592C51.548 28.5165 51.203 28.7469 50.9125 29.0375C50.6219 29.328 50.3915 29.673 50.2342 30.0526C50.077 30.4322 49.9961 30.8391 49.9961 31.25C49.9961 31.6609 50.077 32.0678 50.2342 32.4474C50.3915 32.827 50.6219 33.172 50.9125 33.4625L64.3313 46.875H28.125Z' fill='url(%23paint0_linear_566_27)'/%3E%3C/g%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_566_27' x1='0' y1='50' x2='100' y2='50' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF69B4'/%3E%3Cstop offset='1' stop-color='%238A2BE2'/%3E%3C/linearGradient%3E%3CclipPath id='clip0_566_27'%3E%3Crect width='100' height='100' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+          background-position: center;
+          background-size: cover;
+        }
+        &:hover::before {
+          animation: slide 400ms ease-in-out forwards;
+        }
+      }
+    </style>
   </head>
   <body>
     <ul>
       <li>
-        <a href="./module-01-lesson-01/index.html">Module 01 Lesson 01</a>
+        <a href="./module-01-lesson-01/index.html" data-disabled="false">
+          Module 01 Lesson 01
+        </a>
       </li>
       <li>
-        <a href="./module-01-lesson-02/index.html">Module 01 Lesson 02</a>
-      </li>
-      <!-- <li>
-        <a href="./module-02-lesson-01/index.html">Module 02 Lesson 01</a>
-      </li>
-      <li>
-        <a href="./module-02-lesson-02/index.html">Module 02 Lesson 02</a>
+        <a href="./module-01-lesson-02/index.html" data-disabled="false">
+          Module 01 Lesson 02
+        </a>
       </li>
       <li>
-        <a href="./module-03-lesson-01/index.html">Module 03 Lesson 01</a>
+        <a href="./module-02-lesson-01/index.html" data-disabled="false">
+          Module 02 Lesson 01
+        </a>
       </li>
       <li>
-        <a href="./module-03-lesson-02/index.html">Module 03 Lesson 02</a>
+        <a href="./module-02-lesson-02/index.html" data-disabled="true">
+          Module 02 Lesson 02
+        </a>
       </li>
       <li>
-        <a href="./module-04-lesson-01/index.html">Module 04 Lesson 01</a>
+        <a href="./module-03-lesson-01/index.html" data-disabled="true">
+          Module 03 Lesson 01
+        </a>
       </li>
       <li>
-        <a href="./module-04-lesson-02/index.html">Module 04 Lesson 02</a>
+        <a href="./module-03-lesson-02/index.html" data-disabled="true">
+          Module 03 Lesson 02
+        </a>
       </li>
       <li>
-        <a href="./module-05-lesson-01/index.html">Module 05 Lesson 01</a>
+        <a href="./module-04-lesson-01/index.html" data-disabled="true">
+          Module 04 Lesson 01
+        </a>
       </li>
       <li>
-        <a href="./module-05-lesson-02/index.html">Module 05 Lesson 02</a>
+        <a href="./module-04-lesson-02/index.html" data-disabled="true">
+          Module 04 Lesson 02
+        </a>
       </li>
       <li>
-        <a href="./module-06-lesson-01/index.html">Module 06 Lesson 01</a>
+        <a href="./module-05-lesson-01/index.html" data-disabled="true">
+          Module 05 Lesson 01
+        </a>
       </li>
       <li>
-        <a href="./module-06-lesson-02/index.html">Module 06 Lesson 02</a>
-      </li> -->
+        <a href="./module-05-lesson-02/index.html" data-disabled="true">
+          Module 05 Lesson 02
+        </a>
+      </li>
+      <li>
+        <a href="./module-06-lesson-01/index.html" data-disabled="true">
+          Module 06 Lesson 01
+        </a>
+      </li>
+      <li>
+        <a href="./module-06-lesson-02/index.html" data-disabled="true">
+          Module 06 Lesson 02
+        </a>
+      </li>
     </ul>
   </body>
 </html>
