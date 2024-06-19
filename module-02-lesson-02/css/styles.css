@@ -1,0 +1,134 @@
+:root {
+  --main-color: 182, 84, 84;
+  --primary-color: 182 84 84;
+  --secondary-color: 182, 84, 84;
+  --warning-color: 255, 0, 0;
+}
+/* #region Base styles*/
+body {
+  font-family: serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  color: black;
+  background-color: white;
+}
+h1 - h6 {
+  font-weight: 700;
+}
+address {
+  font-style: italic;
+}
+header {
+  /* background-color: white; */
+}
+/* Rank
+1 - <tagName style="">
+2 - #id
+3 - .class :pseudo-class
+4 - tag ::pseudo-elements
+*/
+
+footer {
+  background-color: #000000;
+  /*
+  HEX
+  0-9 a-f
+  */
+
+  background-color: rgba(var(--main-color), 0.5);
+  background-color: rgb(var(--primary-color) / 0.5);
+  /*
+    GRB
+  0 - 255
+  */
+}
+a {
+  display: block;
+  color: currentColor;
+  text-decoration: none;
+}
+button {
+  font-family: inherit;
+  color: inherit;
+}
+nav {
+  color: lightskyblue;
+}
+ul,
+ol {
+  list-style-type: disc;
+  background-color: darkblue;
+  padding: 40px;
+}
+li {
+  background-color: inherit;
+  color: currentColor;
+}
+/* #endregion */
+
+/* #region Common styles */
+.section {
+}
+.container {
+}
+/* #endregion */
+
+/* #region Header */
+.page-header {
+}
+.header {
+}
+.header-nav {
+}
+/* #endregion */
+
+/* #region Navigation */
+.nav {
+}
+.nav-list {
+}
+.nav-item {
+}
+.nav-link {
+}
+.nav-link:hover,
+.nav-link:focus {
+}
+/* #endregion */
+
+/* #region Logo*/
+.logo {
+}
+.logo-dark {
+}
+.logo-light {
+}
+/* #endregion */
+
+/* #region Made */
+#made {
+}
+#made > h2 {
+}
+#made > h3 {
+}
+#made > ol {
+}
+#made > ol > li {
+}
+/* #endregion */
+
+/* #region Reviews */
+#reviews {
+}
+#reviews > h2 {
+}
+#reviews > ul {
+}
+#reviews > ul > li {
+}
+#reviews h3 {
+}
+/* #endregion */
