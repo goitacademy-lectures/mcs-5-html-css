@@ -14,10 +14,11 @@
       href="./images/icons/chocolate.svg"
       type="image/svg+xml"
     />
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <!-- Custom styles -->
@@ -25,11 +26,15 @@
   </head>
   <body>
     <!-- #region Header -->
-    <header class="page-header header" id="home">
+    <header class="header" id="home">
       <nav class="header-nav nav">
-        <a class="logo logo-dark" href="#">
-          SIMPLY CHOCOLATE
-          <img src="./images/icons/chocolate.svg" alt="Site logo" />
+        <a class="logo" href="#">
+          <span class="logo-accent">SIMPLY</span> CHOCOLATE
+          <img
+            class="logo-icon"
+            src="./images/icons/chocolate.svg"
+            alt="Site logo"
+          />
         </a>
         <ul class="nav-list">
           <li class="nav-item">
@@ -43,15 +48,17 @@
           </li>
         </ul>
       </nav>
-      <ul>
-        <li>
+      <ul class="header-socials socials">
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to Facebook site"
           >
             <img
+              class="socials-icon"
               src="./images/icons/icon-facebook.svg"
               alt="Facebook icon"
               width="24"
@@ -59,14 +66,16 @@
             />
           </a>
         </li>
-        <li>
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to Instagram site"
           >
             <img
+              class="socials-icon"
               src="./images/icons/icon-instagram.svg"
               alt="Instagram icon"
               width="24"
@@ -74,14 +83,16 @@
             />
           </a>
         </li>
-        <li>
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to Twitter site"
           >
             <img
+              class="socials-icon"
               src="./images/icons/icon-twitter.svg"
               alt="Twitter icon"
               width="24"
@@ -95,22 +106,23 @@
 
     <main>
       <!-- #region Hero -->
-      <section>
-        <h1>
+      <section class="hero">
+        <h1 class="hero-title">
           Treat yourself or a loved one to our finest ingredients for a moment
           of pure delight!
         </h1>
-        <ul>
-          <li>
-            <button type="button">Buy now</button>
+        <ul class="hero-list">
+          <li class="hero-item">
+            <button class="btn btn-accent" type="button">Buy now</button>
           </li>
-          <li>
-            <button type="button">How it’s made</button>
+          <li class="hero-item">
+            <button class="btn btn-light" type="button">How it’s made</button>
           </li>
         </ul>
         <a class="hero-link" href="#">
           scroll down
           <img
+            class="hero-link-icon"
             src="./images/icons/arrow-down.svg"
             alt="Scroll down icon"
             width="22"
@@ -121,22 +133,21 @@
       <!-- #endregion -->
 
       <!-- #region Benefits -->
-      <section>
-        <!-- Logic headline -->
-        <h2 hidden>Simply chocolate benefits</h2>
-        <ul>
-          <li>
-            <h3>Unsurpassed taste</h3>
-            <p>
+      <section class="benefits">
+        <h2 class="visually-hidden">Simply chocolate benefits</h2>
+        <ul class="benefits-list">
+          <li class="benefits-item">
+            <h3 class="benefits-subtitle">Unsurpassed taste</h3>
+            <p class="benefits-desc">
               Crafted with the finest quality cocoa beans and a dedication to
               perfection, each bite is a decadent experience that simply cannot
               be matched. Savor the richness and complexity of our Unsurpassed
               Taste and discover a new level of chocolate bliss.
             </p>
           </li>
-          <li>
-            <h3>Affordable price</h3>
-            <p>
+          <li class="benefits-item">
+            <h3 class="benefits-subtitle">Affordable price</h3>
+            <p class="benefits-desc">
               Indulge in high-quality chocolate without breaking the bank with
               Simply Chocolate's selection of affordable treats. Enjoy
               mouth-watering truffles and velvety chocolate bars without
@@ -144,9 +155,9 @@
               affordable luxury today.
             </p>
           </li>
-          <li>
-            <h3>Own production</h3>
-            <p>
+          <li class="benefits-item">
+            <h3 class="benefits-subtitle">Own production</h3>
+            <p class="benefits-desc">
               We take pride in our own production process, ensuring that every
               step is carefully crafted to perfection. From selecting the finest
               ingredients to handcrafting each piece, our attention to detail is
@@ -158,69 +169,89 @@
       <!-- #endregion -->
 
       <!-- #region Ingridients -->
-      <section>
-        <h2>It all adds up to one exceptional <span>taste</span> sensation</h2>
-        <ul>
-          <li>
+      <section class="ingridients">
+        <h2 class="ingridients-title">
+          It all adds up to one exceptional
+          <span class="accent">taste</span> sensation
+        </h2>
+        <ul class="ingredients-list">
+          <li class="ingredients-item">
             <img
+              class="ingridients-ill"
               src="./images/ingridients/img-1.png"
               alt=""
               width="214"
               height="160"
             />
-            <h3>MILK CHOCOLATE</h3>
+            <h3 class="ingridients-caption">MILK CHOCOLATE</h3>
           </li>
-          <li>
-            <img src="./images/ingridients/img-2.png" alt="" width="214" />
-            <h3>MILK</h3>
-          </li>
-          <li>
-            <img src="./images/ingridients/img-3.png" alt="" />
-            <h3>NUTS</h3>
-          </li>
-          <li>
+          <li class="ingredients-item">
             <img
+              class="ingridients-ill"
+              src="./images/ingridients/img-2.png"
+              alt=""
+              width="214"
+              height="160"
+            />
+            <h3 class="ingridients-caption">MILK</h3>
+          </li>
+          <li class="ingredients-item">
+            <img
+              class="ingridients-ill"
+              src="./images/ingridients/img-3.png"
+              alt=""
+              width="214"
+              height="160"
+            />
+            <h3 class="ingridients-caption">NUTS</h3>
+          </li>
+          <li class="ingredients-item">
+            <img
+              class="ingridients-ill"
               src="./images/ingridients/img-4.png"
               alt=""
               width="214"
               height="160"
             />
-            <h3>SEMI - SWEET CHOCOLATE</h3>
+            <h3 class="ingridients-caption">SEMI - SWEET CHOCOLATE</h3>
           </li>
-          <li>
+          <li class="ingredients-item">
             <img
+              class="ingridients-ill"
               src="./images/ingridients/img-5.png"
               alt=""
               width="214"
               height="160"
             />
-            <h3>CACAO</h3>
+            <h3 class="ingridients-caption">CACAO</h3>
           </li>
-          <li>
+          <li class="ingredients-item">
             <img
+              class="ingridients-ill"
               src="./images/ingridients/img-6.png"
               alt=""
               width="214"
               height="160"
             />
-            <h3>RASPBERRY</h3>
+            <h3 class="ingridients-caption">RASPBERRY</h3>
           </li>
-          <li>
+          <li class="ingredients-item">
             <img
+              class="ingridients-ill"
               src="./images/ingridients/img-7.png"
               alt=""
               width="214"
               height="160"
             />
-            <h3>COCONUT OIL</h3>
+            <h3 class="ingridients-caption">COCONUT OIL</h3>
           </li>
         </ul>
       </section>
       <!-- #endregion -->
 
       <!-- #region Made -->
-      <section id="made">
-        <h2>How it’s <span>made</span>?</h2>
+      <section class="made" id="made">
+        <h2 class="made-title">How it’s <span class="accent">made</span>?</h2>
         <img src="./images/made/image.jpg" alt="" width="600" height="400" />
         <h3>
           Try our chocolates today and discover the perfect balance of flavor
@@ -247,8 +278,8 @@
       <!-- #endregion -->
 
       <!-- #region Products -->
-      <section>
-        <h2>Our <span>products</span></h2>
+      <section class="products">
+        <h2 class="products-title">Our <span class="accent">products</span></h2>
         <ul>
           <li>
             <img
@@ -343,8 +374,10 @@
       <!-- #endregion -->
 
       <!-- #region Bestsellers -->
-      <section>
-        <h2><span>Top</span> sellers</h2>
+      <section class="bestsellers">
+        <h2 class="bestsellers-title">
+          <span class="accent">Top</span> sellers
+        </h2>
         <ul>
           <li>
             <img
@@ -378,8 +411,10 @@
       <!-- #endregion -->
 
       <!-- #region Reviews -->
-      <section id="reviews">
-        <h2><span>Chocolate</span> is loved</h2>
+      <section class="reviews" id="reviews">
+        <h2 class="reviews-title">
+          <span class="accent">Chocolate</span> is loved
+        </h2>
         <ul>
           <li>
             <img
@@ -423,7 +458,7 @@
             </p>
           </li>
         </ul>
-        <button type="button">Leave a review</button>
+        <button class="btn btn-dark" type="button">Leave a review</button>
       </section>
       <!-- #endregion -->
     </main>
