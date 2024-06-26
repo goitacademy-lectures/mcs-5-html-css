@@ -50,8 +50,12 @@ button {
 
 /* #region Common */
 .container {
-  width: 1136px;
+  width: 1168px;
+  padding: 0 16px;
   margin: 0 auto;
+
+  outline: 2px solid red;
+  outline-offset: -2px;
 }
 .ingridients-title,
 .made-title,
