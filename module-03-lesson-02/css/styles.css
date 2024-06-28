@@ -10,6 +10,9 @@
   --white-cl: 255 255 255;
   --beige-cl: 252 241 224;
   /* Others */
+  --items: 4;
+  --col-indent: 32px;
+  --row-indent: var(--col-indent);
 }
 
 /* #region Base styles */
@@ -46,6 +49,11 @@ button {
   color: currentColor;
   cursor: pointer;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 /* #endregion */
 
 /* #region Common */
@@ -57,11 +65,21 @@ button {
   outline: 2px solid red;
   outline-offset: -2px;
 }
-.ingridients-title,
+.ingredients,
+.made,
+.products,
+.bestsellers,
+.reviews {
+  padding: 60px 0;
+}
+.ingredients-title,
 .made-title,
 .products-title,
 .bestsellers-title,
 .reviews-title {
+  width: 412px;
+  margin: 0 auto;
+  margin-bottom: 50px;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.17;
@@ -85,9 +103,11 @@ button {
   overflow: hidden;
 }
 .btn {
+  padding: 14px 40px;
   font-weight: 600;
   background: transparent;
   border: 1px solid transparent;
+  border-radius: 100px;
 }
 .btn-accent {
   color: rgb(var(--light-cl));
@@ -101,10 +121,24 @@ button {
   font-size: 18px;
   border-color: rgb(var(--accent-cl));
 }
+/* Card set */
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--row-indent);
+  column-gap: var(--col-indent);
+}
+.card-set-item {
+  width: calc((100% - var(--col-indent) * (var(--items) - 1)) / var(--items));
+}
+
 /* #endregion */
 
 /* #region Logo */
 .logo {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.11;
@@ -119,10 +153,20 @@ button {
 
 /* #region Socials */
 .socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 .socials-item {
 }
 .socials-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
 }
 .socials-icon {
 }
@@ -131,16 +175,31 @@ button {
 /* #region Header */
 .header {
 }
+.header .container {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
 .header-nav {
 }
 /* Navigation */
 .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-grow: 1;
 }
 .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 .nav-item {
 }
 .nav-link {
+  display: block;
+  padding: 32px 0;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: -0.02em;
@@ -150,6 +209,7 @@ button {
   color: rgb(var(--accent-cl));
 }
 .header-socials {
+  /* margin-left: 90px; */
 }
 /* #endregion */
 
@@ -180,13 +240,19 @@ button {
 
 /* #region Benefits */
 .benefits {
+  padding: 50px 0;
   background: rgb(var(--dark-cl));
 }
 .benefits-list {
+  display: flex;
+  justify-content: center;
+  gap: 88px;
 }
 .benefits-item {
+  width: 308px;
 }
 .benefits-subtitle {
+  margin-bottom: 18px;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.22;
@@ -199,38 +265,85 @@ button {
 }
 /* #endregion */
 
-/* #region Ingridients */
-.ingridients {
+/* #region ingredients */
+.ingredients {
+  padding-top: 120px;
 }
-.ingridients-title {
+.ingredients-title {
 }
-.ingridients-list {
+.ingredients-list {
 }
-.ingridients-item {
+.ingredients-item {
+  padding: 28px 23px;
+  border: 1px solid transparent;
+  border-radius: 15px;
 }
-.ingridients-ill {
+/* a * n + b */
+.ingredients-item:nth-child(2n) {
+  border-color: rgb(var(--accent-cl));
 }
-.ingridients-desc {
+.ingredients-item:nth-child(4n + 1) {
+  background-color: rgb(var(--accent-cl));
+  color: rgb(var(--white-cl));
+}
+.ingredients-item:nth-child(4n + 3) {
+  background-color: rgb(var(--dark-cl));
+  color: rgb(var(--white-cl));
+}
+/* .ingredients-item:last-child {
+  background-color: rgb(var(--secondary-cl));
+} */
+.ingredients-ill {
+}
+.ingredients-caption {
+  margin-top: 36px;
+  font-size: 14px;
+  letter-spacing: -0.02em;
   font-weight: 600;
   text-transform: uppercase;
-  color: rgb(var(--primary-cl));
+  /* color: rgb(var(--primary-cl)); */
 }
-/* #endregion Ingridients */
+/* #endregion ingredients */
 /* #region Made */
 .made {
 }
 .made-title {
 }
+.made-wrapper {
+  display: flex;
+  gap: 20px;
+}
+.made-left {
+  flex-shrink: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
 .made-img {
 }
 .made-caption {
+  margin-bottom: 28px;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33;
 }
-.made-list {
+.made-right {
+  padding: 32px;
+  border-radius: 15px;
+  background: #fff;
 }
-.made-item {
+.made-list {
+  /* display: flex;
+  flex-direction: column;
+  gap: 24px; */
+}
+/* .made-item {
+  margin-bottom: 24px;
+}
+.made-item:last-child {
+  margin-bottom: 0;
+} */
+.made-item:not(:last-child) {
+  margin-bottom: 24px;
 }
 /* #endregion Made */
 /* #region Products */
@@ -239,26 +352,38 @@ button {
 .products-title {
 }
 .products-list {
+  --row-indent: 24px;
+  --col-indent: 18px;
 }
 .products-item {
-  background: rgb(var(--light-cl));
+  padding: 32px 20px;
+  background: rgb(var(--white-cl));
+  border-radius: 15px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  text-align: center;
 }
 .products-ill {
 }
 .products-name {
+  margin-top: 8px;
+  margin-bottom: 2px;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33;
   text-transform: uppercase;
 }
 .products-type {
+  margin-bottom: 18px;
   font-size: 12px;
   line-height: 1.17;
   color: rgb(var(--primary-cl) / 70%);
 }
 .products-price {
+  padding: 8px 20px;
   font-weight: 600;
   background: rgb(var(--light-cl));
+  border-radius: 100px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
 }
 /* #endregion Products */
 /* #region Bestsellers */
@@ -282,17 +407,31 @@ button {
 /* #endregion Bestsellers */
 /* #region Reviews */
 .reviews {
+  padding-bottom: 120px;
 }
 .reviews-title {
+  margin-bottom: 92px;
 }
 .reviews-list {
+  --items: 3;
+  --col-indent: 28px;
+
+  margin-bottom: 50px;
 }
 .reviews-item {
+  padding: 24px;
+  padding-top: 56px;
+  border-radius: 15px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
   background: rgb(var(--white-cl));
 }
 .reviews-avatar {
+  margin: 0 auto;
+  margin-top: -106px;
 }
 .reviews-author {
+  margin-top: 18px;
+  margin-bottom: 24px;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33;
@@ -301,6 +440,10 @@ button {
 .reviews-text {
   text-align: center;
   color: rgb(var(--primary-cl) / 70%);
+}
+.reviews-btn {
+  display: block;
+  margin: 0 auto;
 }
 /* #endregion Reviews */
 /* #region Footer */
