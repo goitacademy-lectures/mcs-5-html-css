@@ -673,7 +673,8 @@ img {
 }
 .address-list {
 }
-.address-item {
+.address-item:not(:last-child) {
+  margin-bottom: 4px;
 }
 .address-link {
   text-align: center;
@@ -690,6 +691,8 @@ img {
   padding-top: 24px;
 }
 .footer-nav {
+  display: flex;
+  gap: 24px;
 }
 .footer-nav-item {
 }
