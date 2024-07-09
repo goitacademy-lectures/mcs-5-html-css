@@ -20,6 +20,82 @@
 }
 /* #endregion */
 
+/* #region Aminations */
+@keyframes vertical-move {
+  0% {
+    transform: translateY(-120px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes horizontal-move {
+  0% {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes circle-rotate {
+  0% {
+    transform: translateX(-120px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes text-spring {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  2% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  5% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  8% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  11% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+/* #endregion */
+
 /* #region Base styles */
 body {
   font-family: var(--primary-font);
@@ -290,6 +366,8 @@ img {
   line-height: 1.21;
   letter-spacing: -0.03em;
   color: #fff;
+
+  animation: vertical-move 600ms cubic-bezier(0, 0, 0.2, 1) 500ms both;
 }
 .hero-wrapper {
   display: flex;
@@ -318,6 +396,10 @@ img {
 .hero-link:focus {
   color: rgb(var(--accent-cl));
 }
+.hero-link-text {
+  transform-origin: left center;
+  animation: text-spring 300ms linear 2800ms both;
+}
 .hero-link-circle {
   display: flex;
   justify-content: center;
@@ -326,6 +408,8 @@ img {
   height: 38px;
   border-radius: 50%;
   background-color: currentColor;
+
+  animation: circle-rotate 600ms linear 2600ms both;
 }
 .hero-link-icon {
   fill: rgb(var(--accent-cl));
@@ -333,9 +417,18 @@ img {
   transition: var(--anim-fast);
   transition-property: fill;
 }
-
 .hero-link:hover .hero-link-icon {
   fill: rgb(var(--light-cl));
+}
+
+.hero .btn {
+  animation: horizontal-move 600ms cubic-bezier(0, 0, 0.2, 1) both;
+}
+.hero .btn-accent {
+  animation-delay: 1100ms;
+}
+.hero .btn-light {
+  animation-delay: 1700ms;
 }
 /* #endregion */
 
@@ -634,6 +727,8 @@ img {
 .reviews-btn {
   display: block;
   margin: 0 auto;
+
+  animation: heartbeat 6s ease-in-out infinite both;
 }
 /* #endregion Reviews */
 
