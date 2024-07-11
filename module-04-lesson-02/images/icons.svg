@@ -1,8 +1,8 @@
 <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <symbol id="logo" viewBox="0 0 32 32">
-      <path fill="#fcf1e0" style="fill:var(--color1, #fcf1e0)" d="M5.277 21.409 16.054 3.985l.64-.674 8.236 5.491.056 3.314 2.01 3.28-8.88 14.077L5.277 21.41z"/>
-      <path fill="none" stroke="#fd9222" style="stroke:var(--color2, #fd9222)" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M21.635 23.88 7.45 15.016m3.911-6.417 14.186 8.864M10.63 25.864l11.736-19.25m4.81 8.175c-3.04-1.899-4.234-3.384-2.278-6.592l-9.626-6.015-11.736 19.25 14.185 8.864 9.454-15.507z"/>
+      <path fill="#fcf1e0" d="M5.277 21.409 16.054 3.985l.64-.674 8.236 5.491.056 3.314 2.01 3.28-8.88 14.077L5.277 21.41z"/>
+      <path fill="none" stroke="#fd9222" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M21.635 23.88 7.45 15.016m3.911-6.417 14.186 8.864M10.63 25.864l11.736-19.25m4.81 8.175c-3.04-1.899-4.234-3.384-2.278-6.592l-9.626-6.015-11.736 19.25 14.185 8.864 9.454-15.507z"/>
     </symbol>
     <symbol id="facebook" viewBox="0 0 32 32">
       <path d="M19.52 4.64h.96v3.6h-1.2c-.48 0-.96 0-1.2.24s-.24.48-.24 1.04v1.28h2.64v3.04h-2.64v13.2h-4.08V13.76H11.6v-3.04h2.16V9.68c0-1.76.24-3.04.72-3.6.72-1.04 2.16-1.52 4.32-1.52.24.08.48.08.72.08z"/>

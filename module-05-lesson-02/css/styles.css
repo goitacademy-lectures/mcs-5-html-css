@@ -102,7 +102,6 @@ body {
   font-size: 14px;
   color: rgb(var(--primary-cl));
   background: rgb(var(--light-cl));
-  /* background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); */
 }
 h1,
 h2,
@@ -804,3 +803,228 @@ img {
   color: rgb(var(--accent-cl));
 }
 /* #endregion Footer */
+
+/* #region Modal window*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(var(--dark-cl) / 45%);
+  backdrop-filter: blur(2px);
+  transition: var(--anim-slow);
+  transition-property: opacity, visibility;
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition-delay: 600ms;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.backdrop.is-open {
+  opacity: 1;
+  pointer-events: initial;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.3);
+  max-width: 517px;
+  min-height: 600px;
+  padding: 40px;
+  background: rgb(var(--white-cl));
+  border-radius: 15px;
+  opacity: 0;
+  transition: 600ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition-property: transform, opacity;
+  transition-delay: 0s;
+}
+.backdrop.is-open .modal {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition-delay: 400ms;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+.modal-close-icon {
+}
+.modal-caption {
+  max-width: 298px;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.modal-form {
+}
+.modal-form-field {
+  margin-bottom: 18px;
+}
+.modal-form-label {
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  color: rgba(64, 64, 64, 0.3);
+}
+.modal-form-wrapper {
+  position: relative;
+}
+.modal-form-input {
+  display: block;
+  width: 100%;
+  height: 68px;
+  padding: 22px 62px;
+  line-height: 1.71;
+  border-radius: 13px;
+  border: 1.5px solid rgba(17, 17, 17, 0.05);
+  box-shadow: 0px 5.445px 5.445px 0px rgba(0, 0, 0, 0.03);
+  outline: transparent;
+  transition: var(--anim-fast);
+  transition-property: border-color;
+}
+.modal-form-input:focus {
+  border-color: rgb(var(--accent-cl));
+}
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: rgba(64, 64, 64, 1);
+  transition: var(--anim-fast);
+  transition-property: stroke;
+}
+.modal-form-input:focus + .modal-form-icon {
+  stroke: rgb(var(--accent-cl));
+}
+
+.modal-form-comment {
+  display: block;
+
+  width: 100%;
+  height: 137px;
+  padding: 22px 24px;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  border-radius: 13px;
+  border: 1.5px solid rgba(17, 17, 17, 0.05);
+  outline: transparent;
+  resize: none;
+  transition: var(--anim-fast);
+  transition-property: border-color;
+}
+.modal-form-comment:focus {
+  border-color: rgb(var(--accent-cl));
+}
+.modal-form-comment::placeholder {
+  color: rgba(64, 64, 64, 0.3);
+}
+.modal-form-agreement {
+  margin-bottom: 40px;
+}
+.modal-form-desc {
+  letter-spacing: -0.02em;
+  color: rgba(64, 64, 64, 0.6);
+}
+.modal-form-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  transition: var(--anim-fast);
+  transition-property: border-color, background-color;
+}
+
+input[type='checkbox']:checked + .modal-form-desc > .modal-form-checkbox {
+  border-color: rgb(var(--accent-cl));
+  background-color: rgb(var(--accent-cl));
+}
+input[type='checkbox']:focus-visible + .modal-form-desc > .modal-form-checkbox {
+  box-shadow: 0 0 0 3px rgb(var(--accent-cl) / 25%);
+}
+.modal-form-checkbox-icon {
+}
+.modal-form-link {
+  color: rgb(var(--accent-cl));
+}
+
+/** Checkbox ver.2 */
+.custom-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.94874 9.75416C4.38459 9.75416 4.71409 9.58679 4.93724 9.25207L9.76464 1.97696C9.84484 1.85841 9.90411 1.7416 9.94247 1.62654C9.98082 1.50799 10 1.39467 10 1.28658C10 0.986723 9.8954 0.739164 9.68619 0.543906C9.48047 0.345161 9.22594 0.245789 8.92259 0.245789C8.71339 0.245789 8.53556 0.28763 8.38912 0.371312C8.24616 0.451507 8.11018 0.590977 7.98117 0.789722L3.92782 7.15478L1.89854 4.72278C1.67887 4.46824 1.40342 4.34098 1.07218 4.34098C0.761855 4.34098 0.505579 4.44035 0.303347 4.63909C0.101116 4.83784 0 5.08714 0 5.387C0 5.52299 0.0209205 5.652 0.0627615 5.77403C0.108089 5.89258 0.190028 6.01636 0.308577 6.14537L3.00209 9.32006C3.24965 9.60946 3.5652 9.75416 3.94874 9.75416Z' fill='white'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: var(--anim-fast);
+
+  .modal-form-desc:has(&) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+.custom-checkbox:checked {
+  border-color: rgb(var(--accent-cl));
+  background-color: rgb(var(--accent-cl));
+}
+/** Checkbox ver.3 */
+.uncheck {
+  fill: none;
+  stroke: rgba(17, 17, 17, 0.14);
+}
+.custom-checkbox-icons {
+  .check {
+    opacity: 0;
+    transition: var(--anim-fast);
+  }
+  .uncheck {
+    opacity: 1;
+    transition: var(--anim-fast);
+  }
+}
+.custom-checkbox:checked + .custom-checkbox-icons > .check {
+  opacity: 1;
+}
+.custom-checkbox:checked + .custom-checkbox-icons > .uncheck {
+  opacity: 0;
+}
+/* #endregion */
+
+/*
+dialog {
+  min-width: 400px;
+  min-height: 500px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+dialog::backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0 0.25);
+} */

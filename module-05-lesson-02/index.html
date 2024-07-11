@@ -635,5 +635,118 @@
       </div>
     </footer>
     <!-- #endregion -->
+
+    <div class="backdrop">
+      <div class="modal">
+        <button class="modal-close-btn" type="button">
+          <svg class="modal-close-icon" width="28" height="28">
+            <use href="./images/icons.svg#x-close"></use>
+          </svg>
+        </button>
+
+        <p class="modal-caption">
+          LEAVE A REVIEW ABOUT <span class="accent">OUR CHOCOLATE</span>
+        </p>
+
+        <form class="modal-form" name="user_review">
+          <div class="modal-form-field">
+            <label class="modal-form-label" for="user_name">Name</label>
+            <div class="modal-form-wrapper">
+              <input
+                class="modal-form-input"
+                type="text"
+                name="user_name"
+                id="user_name"
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#user"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-field">
+            <label class="modal-form-label" for="user_email">Email</label>
+            <div class="modal-form-wrapper">
+              <input
+                class="modal-form-input"
+                type="email"
+                name="user_email"
+                id="user_email"
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#email"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-field">
+            <label class="modal-form-label" for="user_tel">Phone number</label>
+            <div class="modal-form-wrapper">
+              <input
+                class="modal-form-input"
+                type="tel"
+                name="user_tel"
+                id="user_tel"
+              />
+              <svg class="modal-form-icon" width="24" height="24">
+                <use href="./images/icons.svg#phone"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-form-field">
+            <label class="modal-form-label" for="user_comment">Comment</label>
+            <textarea
+              class="modal-form-comment"
+              rows="4"
+              name="user_comment"
+              id="user_comment"
+              placeholder="Enter text"
+            ></textarea>
+          </div>
+          <!-- <div class="modal-form-agreement">
+            <label class="modal-form-desc" for="user_agreement">
+              <input
+                class="custom-checkbox"
+                type="checkbox"
+                name="user_agreement"
+                id="user_agreement"
+                value="false"
+              />
+              <svg class="custom-checkbox-icons" width="20" height="20">
+                <use class="check" href="./images/icons.svg#check"></use>
+                <use class="uncheck" href="./images/icons.svg#uncheck"></use>
+              </svg>
+              I accept the terms and conditions of the
+              <a class="modal-form-link" href="">Privacy Policy</a>
+            </label>
+          </div> -->
+          <div class="modal-form-agreement">
+            <input
+              class="visually-hidden"
+              type="checkbox"
+              name="user_agreement"
+              id="user_agreement"
+              value="false"
+            />
+            <label class="modal-form-desc" for="user_agreement">
+              <span class="modal-form-checkbox">
+                <svg class="modal-form-checkbox-icon" width="10" height="10">
+                  <use href="./images/icons.svg#checkmark"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a class="modal-form-link" href="">Privacy Policy</a>
+            </label>
+          </div>
+          <button class="btn btn-accent" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- <dialog>
+      <button type="button">
+        <svg class="" width="28" height="28">
+          <use href="./images/icons.svg#x-close"></use>
+        </svg>
+      </button>
+    </dialog> -->
   </body>
 </html>
