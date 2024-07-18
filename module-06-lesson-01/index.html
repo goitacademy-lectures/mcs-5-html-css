@@ -48,6 +48,7 @@
             class="menu-btn header-menu-btn"
             type="button"
             aria-label="Open mobile menu button"
+            aria-controls="mobile-menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,6 +66,7 @@
               />
             </svg>
           </button>
+
           <ul class="nav-list">
             <li class="nav-item">
               <a class="nav-link active" href="#home">Home</a>
@@ -123,7 +125,7 @@
     <!-- #endregion -->
     <main>
       <!-- #region Hero -->
-      <section class="hero hide">
+      <section class="hero">
         <div class="container">
           <h1 class="hero-title">
             Treat yourself or a loved one to our&nbsp;finest ingredients for a
@@ -207,7 +209,7 @@
       <!-- #endregion -->
 
       <!-- #region Ingredients -->
-      <section class="ingredients hide">
+      <section class="ingredients">
         <div class="container">
           <h2 class="ingredients-title">
             It all adds up to one exceptional
@@ -217,70 +219,105 @@
             <li class="ingredients-item card-set-item">
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-1.png"
+                srcset="
+                  ./images/ingredients/img-1@1x.png 1x,
+                  ./images/ingredients/img-1@2x.png 2x
+                "
+                src="./images/ingredients/img-1@1x.png"
                 alt=""
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <h3 class="ingredients-caption">MILK CHOCOLATE</h3>
             </li>
             <li class="ingredients-item card-set-item">
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-2.png"
+                srcset="
+                  ./images/ingredients/img-2@1x.png 1x,
+                  ./images/ingredients/img-2@2x.png 2x
+                "
+                src="./images/ingredients/img-2@1x.png"
                 alt=""
                 width="214"
                 height="160"
+                loading="lazy"
               />
               <h3 class="ingredients-caption">MILK</h3>
             </li>
             <li class="ingredients-item card-set-item">
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-3.png"
+                srcset="
+                  ./images/ingredients/img-3@1x.png 1x,
+                  ./images/ingredients/img-3@2x.png 2x
+                "
+                src="./images/ingredients/img-3@1x.png"
                 alt=""
                 width="214"
                 height="160"
+                loading="lazy"
               />
               <h3 class="ingredients-caption">NUTS</h3>
             </li>
             <li class="ingredients-item card-set-item">
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-4.png"
+                srcset="
+                  ./images/ingredients/img-4@1x.png 1x,
+                  ./images/ingredients/img-4@2x.png 2x
+                "
+                src="./images/ingredients/img-4@1x.png"
                 alt=""
                 width="214"
                 height="160"
+                loading="lazy"
               />
               <h3 class="ingredients-caption">SEMI - SWEET CHOCOLATE</h3>
             </li>
             <li class="ingredients-item card-set-item">
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-5.png"
+                srcset="
+                  ./images/ingredients/img-5@1x.png 1x,
+                  ./images/ingredients/img-5@2x.png 2x
+                "
+                src="./images/ingredients/img-5@1x.png"
                 alt=""
                 width="214"
                 height="160"
+                loading="lazy"
               />
               <h3 class="ingredients-caption">CACAO</h3>
             </li>
             <li class="ingredients-item card-set-item">
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-6.png"
+                srcset="
+                  ./images/ingredients/img-6@1x.png 1x,
+                  ./images/ingredients/img-6@2x.png 2x
+                "
+                src="./images/ingredients/img-6@1x.png"
                 alt=""
                 width="214"
                 height="160"
+                loading="lazy"
               />
               <h3 class="ingredients-caption">RASPBERRY</h3>
             </li>
             <li class="ingredients-item card-set-item">
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-7.png"
+                srcset="
+                  ./images/ingredients/img-7@1x.png 1x,
+                  ./images/ingredients/img-7@2x.png 2x
+                "
+                src="./images/ingredients/img-7@1x.png"
                 alt=""
                 width="214"
                 height="160"
+                loading="lazy"
               />
               <h3 class="ingredients-caption">COCONUT OIL</h3>
             </li>
@@ -338,20 +375,37 @@
       <!-- #endregion  -->
 
       <!-- #region Products -->
-      <section class="products hide">
+      <section class="products">
         <div class="container">
           <h2 class="products-title section-title">
             Our <span class="accent">products</span>
           </h2>
           <ul class="products-list card-set">
             <li class="products-item card-set-item">
-              <img
-                class="products-ill"
-                src="./images/products/img-1.jpg"
-                alt="Dark chocolate with Orange"
-                width="230"
-                height="201"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/products/img-1.webp    1x,
+                    ./images/products/img-1@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/products/img-1.jpg    1x,
+                    ./images/products/img-1@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="products-ill"
+                  src="./images/products/img-1.jpg"
+                  alt="Dark chocolate with Orange"
+                  width="230"
+                  height="201"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="products-name">Orange</h3>
               <p class="products-type">Dark chocolate</p>
               <button class="products-price" type="button">45 UAH</button>
@@ -363,6 +417,7 @@
                 alt="Milk chocolate with Apple & Cranberry"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-name">Apple&Cranberry</h3>
               <p class="products-type">Milk chocolate</p>
@@ -375,6 +430,7 @@
                 alt="Dark chocolate with Lime&Sea salt"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-name">Lime&Sea salt</h3>
               <p class="products-type">Dark chocolate</p>
@@ -387,6 +443,7 @@
                 alt="Dark chocolate with Pineapple"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-name">Pineapple</h3>
               <p class="products-type">Dark chocolate</p>
@@ -399,6 +456,7 @@
                 alt="Milk chocolate Classic"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-name">Classic</h3>
               <p class="products-type">Milk chocolate</p>
@@ -411,6 +469,7 @@
                 alt="Milk chocolate with Honey"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-name">Honey</h3>
               <p class="products-type">Milk chocolate</p>
@@ -423,6 +482,7 @@
                 alt="Dark chocolate with Roasted fruits"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-name">Roasted fruits</h3>
               <p class="products-type">Dark chocolate</p>
@@ -435,6 +495,7 @@
                 alt="White chocolate Classic"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-name">Classic</h3>
               <p class="products-type">White chocolate</p>
@@ -657,6 +718,7 @@
     </footer>
     <!-- #endregion -->
 
+    <!-- #region Modal window-->
     <div class="backdrop hide">
       <div class="modal">
         <button class="modal-close-btn" type="button">
@@ -761,5 +823,100 @@
         </form>
       </div>
     </div>
+    <!-- #endregion -->
+
+    <!-- #region Mobile menu-->
+    <div class="mobile-menu" id="mobile-menu">
+      <button
+        class="mobile-menu-btn"
+        type="button"
+        aria-label="Mobile menu close button"
+      >
+        <svg class="mobile-menu-icon" width="12" height="12">
+          <use href="./images/icons.svg#x-close"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu-list">
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link active" href="">Studio</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="">Portfolio</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="">Contacts</a>
+        </li>
+      </ul>
+
+      <ul class="mobile-menu-contacts">
+        <li class="mobile-menu-contacts-item">
+          <a class="mobile-menu-contacts-link accent" href="tel:+110001111111">
+            +11 (000) 111-11-11
+          </a>
+        </li>
+        <li class="mobile-menu-contacts-item">
+          <a class="mobile-menu-contacts-link" href="mailto:info@devstudio.com">
+            info@devstudio.com
+          </a>
+        </li>
+      </ul>
+
+      <ul class="mobile-menu-socials socials">
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to Facebook site"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to Instagram site"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to Twitter site"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to Facebook site"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- #endregion -->
   </body>
 </html>
